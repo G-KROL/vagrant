@@ -1,0 +1,6 @@
+- name: Install Nginx locally
+  become: true
+  hosts: all
+  connection: local
+  roles:
+   - nginxinc.nginx
