@@ -7,12 +7,12 @@
   tasks:
       - name: Create directory
         file:
-          path: /ect/ansible/roles
+          path: /etc/ansible/roles
           state: directory
           mode: '0755'
 
       - name: Clone a repo
         git:
           repo: "{{ git_repository }}"
-          dest: "/ect/ansible/roles"
+          dest: "/etc/ansible/roles"
           version: "{{ git_branch }}"
