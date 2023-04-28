@@ -1,0 +1,18 @@
+- name:
+  hosts: all
+  become: true
+  vars:
+      git_repository: "https://github.com/G-KROL/ansible-roles"
+      git_branch: "main"
+  tasks:
+      - name: Create directory
+        file:
+          path: /ect/ansible/roles
+          state: directory
+          mode: '0755'
+
+      - name: Clone a repo
+        git:
+          repo: "{{ git_repository }}"
+          dest: "/ect/ansible/roles"
+          version: "{{ git_branch }}"
