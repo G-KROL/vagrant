@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "ansible_local" do |ansible|
-    ansible.galaxy_role_file = "playbooks/infrastructure.yml"
+    ansible.playbook = "playbooks/infrastructure.yml"
     ansible.extra_vars = {
       git_repository: "https://github.com/G-KROL/Infrastructure",
       git_branch: "master"
